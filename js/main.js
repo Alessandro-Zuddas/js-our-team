@@ -1,5 +1,8 @@
 "use strict";
 
+// Dichiarazione del cards container
+const cardsContainer = document.querySelector(".cards-container");
+
 // Creare l’array di oggetti con le informazioni fornite.
 const staffMembers = [
 
@@ -36,17 +39,22 @@ const staffMembers = [
 
 ];
 
-// Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+// Stampare le stesse informazioni su DOM sottoforma di stringhe
 for (let i = 0; i < staffMembers.length; i++) {
     
     const currentMember = staffMembers[i];
-    console.log(currentMember);
+
+    let memberCard = document.createElement(`div`);
+    memberCard.classList.add("member-card");
+
+    cardsContainer.append(memberCard);
     
+    for(let key in currentMember){
+        memberCard.append(currentMember[key]);
+    }
+
 }
 
-
-// MILESTONE 2:
-// Stampare le stesse informazioni su DOM sottoforma di stringhe
 // BONUS 1:
 // Trasformare la stringa foto in una immagine effettiva
 // BONUS 2:
