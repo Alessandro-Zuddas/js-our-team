@@ -1,7 +1,9 @@
 "use strict";
 
+
+
 // Dichiarazione del cards container
-const cardsContainer = document.querySelector(".cards-container");
+const cardsContainer = document.querySelector(".row");
 
 // Creare l’array di oggetti con le informazioni fornite.
 const staffMembers = [
@@ -41,7 +43,7 @@ const staffMembers = [
 
 // Stampare le stesse informazioni su DOM sottoforma di stringhe
 for (let i = 0; i < staffMembers.length; i++) {
-    
+
     const currentMember = staffMembers[i];
 
     let memberCard = document.createElement(`div`);
@@ -50,12 +52,14 @@ for (let i = 0; i < staffMembers.length; i++) {
     cardsContainer.append(memberCard);
     
     for(let key in currentMember){
-        memberCard.append(currentMember[key]);
+        let cardSection = document.createElement("div");
+        cardSection.classList.add("card-section");
+        cardSection.innerHTML = currentMember[key];
+
+        memberCard.append(cardSection);
     }
 
 }
 
 // BONUS 1:
 // Trasformare la stringa foto in una immagine effettiva
-// BONUS 2:
-// Organizzare i singoli membri in card/schede
