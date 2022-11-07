@@ -3,8 +3,6 @@
 // Dichiarazione del cards container
 const cardsContainer = document.querySelector(".row");
 
-let counter = 0;
-
 // Creare l’array di oggetti con le informazioni fornite.
 const staffMembers = [
 
